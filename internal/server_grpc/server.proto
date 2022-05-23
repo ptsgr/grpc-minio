@@ -1,0 +1,48 @@
+syntax = "proto3";
+option go_package = "./;server_grpc";
+
+package server_grpc;
+
+service Server {
+    rpc Put(PutRequest) returns (PutResponse) {}
+    rpc Get(GetRequest) returns (GetResponse) {}
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+}
+
+enum StatusCode {
+        Ok = 0;
+        Failed = 1;
+}
+
+message PutRequest {
+        string Filename = 1;
+        bytes FileData = 2;
+}
+
+message PutResponse {
+        string Message = 1;
+        StatusCode Code = 2;
+        string Filename = 3;
+}
+
+message GetRequest {
+        string Filename = 1;
+}
+
+message GetResponse {
+        string Message = 1;
+        StatusCode Code = 2;
+        bytes FileData = 3;
+}
+
+message DeleteRequest {
+        string Filename = 1;
+}
+
+message DeleteResponse {
+        string Message = 1;
+        StatusCode Code = 2;
+}
+
+
+

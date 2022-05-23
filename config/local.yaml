@@ -1,0 +1,8 @@
+grpc:
+  port: 5300
+minio:
+  uri: localhost:29000
+  bucket-name: grpc-server-data
+  access-key: minio-access-key
+  access-secret: minio-secret-key
+  use-ssl: false
