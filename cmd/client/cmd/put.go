@@ -40,6 +40,7 @@ var putCmd = &cobra.Command{
 		}
 
 		log.Println(resp.Message)
+		log.Println("MinIO filename: " + resp.Filename)
 
 	},
 }
